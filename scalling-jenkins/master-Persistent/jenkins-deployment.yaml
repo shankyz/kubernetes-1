@@ -38,11 +38,11 @@ items:
                 containerPort: 50000   
             volumeMounts:
               - name: jenkins-home
-                mountPath: "/var/jenkins_home"
+                mountPath: "/srv/nfs/kubedata"
         volumes:
           - name: jenkins-home
             persistentVolumeClaim:
-              claimName: "jenkins-volume-claim"
+              claimName: "pvc-nfs-pv1"
               readOnly: false
 
 - apiVersion: "v1"
